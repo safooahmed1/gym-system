@@ -1,15 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
-import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
+import { Card, CardContent } from '../../components/ui/Card';
 import { Table } from '../../components/ui/Table';
 import { Badge } from '../../components/ui/Badge';
-import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Select } from '../../components/ui/Select';
 import { api } from '../../services/api';
 import { Payment, PaymentFilters } from '../../types';
-import { formatDateShort, formatCurrency, getStatusLabel } from '../../utils/helpers';
-import { Search, Filter, Eye, DollarSign } from 'lucide-react';
+import { formatDateShort, formatCurrency } from '../../utils/helpers';
+import { Search } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 
 const methodOptions = [

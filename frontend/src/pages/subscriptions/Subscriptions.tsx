@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
+import { Card, CardContent } from '../../components/ui/Card';
 import { Table } from '../../components/ui/Table';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
@@ -9,10 +9,9 @@ import { Input } from '../../components/ui/Input';
 import { Select } from '../../components/ui/Select';
 import { api } from '../../services/api';
 import { Subscription, SubscriptionFilters } from '../../types';
-import { formatDateShort, formatCurrency, getStatusLabel, cn } from '../../utils/helpers';
-import { Plus, Search, Filter, Eye, RotateCcw } from 'lucide-react';
+import { formatDateShort, formatCurrency, getStatusLabel } from '../../utils/helpers';
+import { Plus, Search, Eye, RotateCcw } from 'lucide-react';
 import { useState, FormEvent } from 'react';
-import { toast } from 'sonner';
 
 const statusOptions = [
   { value: '', label: 'All Statuses' },

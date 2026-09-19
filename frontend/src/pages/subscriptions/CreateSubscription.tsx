@@ -32,7 +32,7 @@ export default function CreateSubscription() {
   const memberOptions = membersData?.map((m: Member) => ({ value: m.id, label: `${m.name} (${m.accountId})` })) || [];
   const planOptions = plansData?.map((p: SubscriptionPlan) => ({ value: p.id, label: `${p.name} - ${p.price} EGP/${p.durationMonths}m` })) || [];
 
-  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<CreateSubFormData>({
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<CreateSubFormData>({
     resolver: zodResolver(createSubSchema),
     defaultValues: { discountType: undefined, discountValue: undefined },
   });

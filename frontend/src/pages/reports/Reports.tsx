@@ -1,14 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
-import { Badge } from '../../components/ui/Badge';
 import { Select } from '../../components/ui/Select';
 import { api } from '../../services/api';
 import { DashboardStats, RevenueReport, SubscriptionReport, AttendanceReport } from '../../types';
 import { formatCurrency, formatNumber } from '../../utils/helpers';
 import { 
   Users, CreditCard, CheckCircle, AlertCircle, Clock, TrendingUp, 
-  DollarSign, Calendar, Download, BarChart, PieChart, ArrowLeft
+  DollarSign, Calendar, BarChart, PieChart
 } from 'lucide-react';
 import { useState } from 'react';
 import {
@@ -30,8 +29,6 @@ const groupByOptions = [
   { value: 'week', label: 'Weekly' },
   { value: 'month', label: 'Monthly' },
 ];
-
-const COLORS = ['#22c55e', '#3b82f6', '#a855f7', '#f97316', '#ec4899', '#06b6d4', '#84cc16', '#f43f5e'];
 
 export default function Reports() {
   const { t } = useTranslation();
@@ -60,7 +57,6 @@ export default function Reports() {
 
   const members = dashboardData?.members || { total: 0, active: 0, expired: 0, expiringSoon: 0 };
   const revenue = dashboardData?.revenue || { today: 0, thisWeek: 0, thisMonth: 0, thisYear: 0, byMethod: { cash: 0, electronic: 0 } };
-  const attendances = dashboardData?.attendances || { today: 0 };
 
   return (
     <div className="space-y-6">

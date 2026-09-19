@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
@@ -8,7 +8,7 @@ import { Table } from '../../components/ui/Table';
 import { api } from '../../services/api';
 import { Member, Subscription, Payment, Attendance } from '../../types';
 import { formatDateShort, formatCurrency, getStatusLabel, cn } from '../../utils/helpers';
-import { ArrowLeft, CreditCard, DollarSign, CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import { ArrowLeft, CreditCard, DollarSign, CheckCircle } from 'lucide-react';
 
 export default function MemberDetails() {
   const { t } = useTranslation();

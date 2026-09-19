@@ -2,14 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
 import { Table } from '../../components/ui/Table';
-import { Badge } from '../../components/ui/Badge';
 import { Input } from '../../components/ui/Input';
-import { Select } from '../../components/ui/Select';
-import { Button } from '../../components/ui/Button';
 import { api } from '../../services/api';
 import { Attendance, AttendanceFilters } from '../../types';
-import { formatDateShort, formatDateTime, getStatusLabel } from '../../utils/helpers';
-import { Search, Filter, Calendar, Clock, Users, TrendingUp } from 'lucide-react';
+import { formatDateTime } from '../../utils/helpers';
+import { Search, Calendar, Clock, Users, TrendingUp } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 
 export default function Attendances() {

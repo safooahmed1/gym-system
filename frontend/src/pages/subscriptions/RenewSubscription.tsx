@@ -7,11 +7,11 @@ import { useQuery } from '@tanstack/react-query';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '../../components/ui/Card';
 import { Select } from '../../components/ui/Select';
 import { Button } from '../../components/ui/Button';
+import { Input } from '../../components/ui/Input';
 import { api } from '../../services/api';
 import { SubscriptionPlan } from '../../types';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
-import { formatDateShort, cn } from '../../utils/helpers';
 
 const renewSchema = z.object({
   planId: z.number().min(1, 'Plan is required'),
@@ -99,6 +99,3 @@ export default function RenewSubscription() {
     </div>
   );
 }
-
-// Need Input component
-import { Input } from '../../components/ui/Input';

@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '../../components/ui/Card';
+import { Card, CardContent } from '../../components/ui/Card';
 import { Table } from '../../components/ui/Table';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
-import { Select } from '../../components/ui/Select';
 import { Modal } from '../../components/ui/Modal';
 import { api } from '../../services/api';
 import { SubscriptionPlan } from '../../types';
@@ -28,7 +27,7 @@ type PlanFormData = z.infer<typeof planSchema>;
 
 function PlanForm({ onSubmit, editingPlan, isLoading, onClose }: { onSubmit: (data: PlanFormData) => void; editingPlan: SubscriptionPlan | null; isLoading: boolean; onClose: () => void }) {
   const { t } = useTranslation();
-  const { register, handleSubmit, formState: { errors }, setValue, watch } = useForm<PlanFormData>({
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm<PlanFormData>({
     resolver: zodResolver(planSchema),
     defaultValues: { name: '', durationMonths: 1, price: 0, description: '', isActive: true },
   });
